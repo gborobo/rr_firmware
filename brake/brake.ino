@@ -1,19 +1,18 @@
 #include <Servo.h>
 
 Servo brake;
-
-const int pot = 5;
+#define POT 5
 
 void setup()
 {
-  pinMode(pot,INPUT);
+  pinMode(POT,INPUT);
   brake.attach(3);
 }
 
 void loop()
 {
   int val;
-  val = analogRead(pot);
+  val = analogRead(POT);
   val = map(val, 0, 1023, 0, 179);
   brake.write(val);
   delay(15);
