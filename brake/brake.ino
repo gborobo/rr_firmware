@@ -3,7 +3,6 @@
 Servo brake;
 
 const int pot = 5;
-int val;
 
 void setup()
 {
@@ -13,6 +12,7 @@ void setup()
 
 void loop()
 {
+  int val;
   val = analogRead(pot);
   val = map(val, 0, 1023, 0, 179);
   brake.write(val);
